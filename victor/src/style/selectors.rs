@@ -2,10 +2,11 @@ use crate::dom::{Document, Node, NodeId};
 use crate::style::errors::RuleParseErrorKind;
 use cssparser::ToCss;
 use html5ever::{LocalName, Namespace, Prefix};
+use selectors::Element;
 use selectors::attr::{AttrSelectorOperation, CaseSensitivity, NamespaceConstraint};
 use selectors::context::{MatchingContext, MatchingMode, QuirksMode};
 use selectors::matching::{matches_selector, ElementSelectorFlags};
-use std::fmt;
+use std::fmt::{self, Debug};
 
 pub type SelectorList = selectors::SelectorList<Impl>;
 pub type Selector = selectors::parser::Selector<Impl>;
